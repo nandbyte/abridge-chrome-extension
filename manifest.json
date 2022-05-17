@@ -6,7 +6,7 @@
     "action": {
         "default_icon": "/images/nandbyte128.png"
     },
-    "permissions": ["contextMenus", "activeTab", "tabs"],
+    "permissions": ["contextMenus", "activeTab", "tabs", "storage"],
 
     "background": {
         "service_worker": "/scripts/service-worker.js"

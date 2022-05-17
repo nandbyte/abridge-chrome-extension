@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    padding: 64px;
+}
+
+.text-section {
+    flex: 50%;
+    padding: 64px;
+    padding-top: 0;
+}
+
+.divider {
+    border-left: 2px solid black;
+    height: 1200px;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
+    padding: 32px;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+p {
+    font-size: large;
+}
+
+.loading {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid black;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
