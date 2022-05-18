@@ -45,14 +45,15 @@ chrome.storage.local.get(["original"], (result) => {
     const abridgeElement = document.getElementById("abridge-text");
     abridgeElement.classList.add("loading");
 
-    fetch("https://api.chucknorris.io/jokes/random")
-        .then((data) => data.json())
-        .then((jsonData) => {
-            // Save the data you need
-            const abridgeText = jsonData.value;
+    fetch("https://localhost:5000", {
+        method: "POST",
+        body: JSON.stringify({ txt: textChunks }),
+    }).then((data) => {
+        // Save the data you need
+        const abridgeText = data;
 
-            // Update abridge data on the website
-            abridgeElement.classList.remove("loading");
-            abridgeElement.innerText = abridgeText;
-        });
+        // Update abridge data on the website
+        abridgeElement.classList.remove("loading");
+        abridgeElement.innerText = abridgeText;
+    });
 });
