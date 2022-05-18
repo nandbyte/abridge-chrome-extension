@@ -13,13 +13,12 @@ footer{
 
 .footer-bottom p{
     float: left;
-        font-size: 18px;
+        font-size: 20px;
         word-spacing: 4px;
-        text-transform: capitalize;
     }
     .footer-bottom p a{
       color:#44bae8;
-      font-size: 18px;
+      font-size: 20px;
       text-decoration: none;
     }
     /* .footer-bottom span{
@@ -27,30 +26,4 @@ footer{
         opacity: .4;
         font-weight: 200;
     } */
-    .footer-menu{
-      float: right;
-    
-    }
-    .footer-menu ul{
-      display: flex;
-    }
-    .footer-menu ul li{
-    padding-right: 50px;
-    display: block;
-    font-size: 20px;
-    }
-    .footer-menu ul li a{
-      color: #cfd2d6;
-      text-decoration: none;
-    }
-    .footer-menu ul li a:hover{
-      color: #27bcda;
-    }
-    
-    @media (max-width:500px) {
-    .footer-menu ul{
-      display: flex;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    }
+  
