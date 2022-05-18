@@ -45,7 +45,7 @@ chrome.storage.local.get(["original"], (result) => {
     const abridgeElement = document.getElementById("abridge-text");
     abridgeElement.classList.add("loading");
 
-    fetch("https://localhost:5000", {
+    fetch("https://localhost:5000/", {
         method: "GET",
         body: JSON.stringify({ txt: textChunks }),
     }).then((data) => {
