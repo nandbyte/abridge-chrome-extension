@@ -46,7 +46,7 @@ chrome.storage.local.get(["original"], (result) => {
     abridgeElement.classList.add("loading");
 
     fetch("https://localhost:5000", {
-        method: "POST",
+        method: "GET",
         body: JSON.stringify({ txt: textChunks }),
     }).then((data) => {
         // Save the data you need
