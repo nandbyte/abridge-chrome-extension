@@ -1,8 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-html,body{
+
+html,
+body {
     width: 98%;
     min-height: 100%;
 }
@@ -31,6 +33,7 @@ h1 {
 
 h2 {
     font-size: x-large;
+    padding-bottom: 24px;
 }
 
 p {
