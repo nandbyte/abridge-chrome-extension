@@ -21,7 +21,7 @@ chrome.storage.local.get(["original"], (result) => {
     let currentWordCount = 0;
 
     linesWithWordCount.forEach((lineWithCount, index) => {
-        if (currentWordCount + lineWithCount.wordCount <= 100) {
+        if (currentWordCount + lineWithCount.wordCount <= 70) {
             currentChunk += lineWithCount.line + ". ";
             currentWordCount += lineWithCount.wordCount;
         } else {
@@ -45,15 +45,33 @@ chrome.storage.local.get(["original"], (result) => {
     const abridgeElement = document.getElementById("abridge-text");
     abridgeElement.classList.add("loading");
 
-    fetch("http://localhost:5000/predict", {
+    /*fetch("http://localhost:5000/predict", {
         method: "POST",
         body: JSON.stringify({ txt: textChunks }),
-    }).then((data) => {
+    })
+    .then((data) => {
         // Save the data you need
+        
         const abridgeText = data;
+        console.log("test")
+        console.log(typeof(data)) 
+        console.log(data.json()) 
+        // Update abridge data on the website
+        abridgeElement.classList.remove("loading");
+        abridgeElement.innerText = abridgeText;
+    });
+});*/
+   fetch("http://localhost:5000/predict", {
+        method: "POST",
+        body: JSON.stringify({ txt: textChunks }),
+    }).then(res=>res.json()).then((data) => {
+        // Save the data you need
+        console.log("test")
+        console.log(data)
+        const abridgeText = data.summary;
 
         // Update abridge data on the website
         abridgeElement.classList.remove("loading");
         abridgeElement.innerText = abridgeText;
     });
-});
+})
