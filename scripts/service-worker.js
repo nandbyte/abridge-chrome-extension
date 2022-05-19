@@ -8,7 +8,7 @@ const summarizeText = (info, tab) => {
 
 chrome.contextMenus.create({
     id: "abridge-context",
-    title: "Abridge: summarize selected text",
+    title: "Abridge: Summarize selected text",
     contexts: ["selection"],
 });
 

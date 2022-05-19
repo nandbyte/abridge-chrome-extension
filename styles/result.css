@@ -5,17 +5,18 @@
 
 html,
 body {
-    width: 98%;
+    width: 100%;
     min-height: 100%;
 }
+
 .container {
     display: flex;
-    padding: 64px;
+    padding: 32px;
 }
 
 .text-section {
     flex: 50%;
-    padding: 64px;
+    padding: 32px;
     padding-top: 0;
 }
 
@@ -28,7 +29,7 @@ h1 {
     font-size: xx-large;
     text-align: center;
     width: 100%;
-    padding: 32px;
+    padding: 16px;
 }
 
 h2 {
@@ -38,6 +39,19 @@ h2 {
 
 p {
     font-size: large;
+}
+
+img {
+    padding: 24px;
+    padding-top: 36px;
+}
+
+.error {
+    color: darkred;
+}
+
+.answer {
+    color: darkgreen;
 }
 
 .loading {
@@ -64,4 +78,4 @@ p {
     margin-right: auto;
     width: 150px;
     height: 150px;
-  }
+}

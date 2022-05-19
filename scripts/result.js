@@ -45,33 +45,28 @@ chrome.storage.local.get(["original"], (result) => {
     const abridgeElement = document.getElementById("abridge-text");
     abridgeElement.classList.add("loading");
 
-    /*fetch("http://localhost:5000/predict", {
+    fetch("http://localhost:5000/predict", {
         method: "POST",
         body: JSON.stringify({ txt: textChunks }),
     })
-    .then((data) => {
-        // Save the data you need
-        
-        const abridgeText = data;
-        console.log("test")
-        console.log(typeof(data)) 
-        console.log(data.json()) 
-        // Update abridge data on the website
-        abridgeElement.classList.remove("loading");
-        abridgeElement.innerText = abridgeText;
-    });
-});*/
-   fetch("http://localhost:5000/predict", {
-        method: "POST",
-        body: JSON.stringify({ txt: textChunks }),
-    }).then(res=>res.json()).then((data) => {
-        // Save the data you need
-        console.log("test")
-        console.log(data)
-        const abridgeText = data.summary;
+        .then((res) => res.json())
+        .then((data) => {
+            // Save the data you need
+            const abridgeText = data.summary;
 
-        // Update abridge data on the website
-        abridgeElement.classList.remove("loading");
-        abridgeElement.innerText = abridgeText;
-    });
-})
+            // Update abridge data on the website
+            abridgeElement.classList.remove("loading");
+            abridgeElement.classList.add("answer");
+            abridgeElement.innerText = abridgeText;
+        })
+        .catch((error) => {
+            console.log(error);
+            const abridgeText =
+                "There were some errors while handling your request.";
+
+            // Update abridge data on the website
+            abridgeElement.classList.remove("loading");
+            abridgeElement.classList.add("error");
+            abridgeElement.innerText = abridgeText;
+        });
+});
