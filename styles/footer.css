@@ -23,9 +23,15 @@ footer{
       font-size: 20px;
       text-decoration: none;
     }
-    /* .footer-bottom span{
-        text-transform: uppercase;
-        opacity: .4;
-        font-weight: 200;
-    } */
-  
+
+    @media(max-width: 880px){
+      .footer-bottom{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    }
+    @media(max-width: 574px){
+      .footer-bottom{
+        width: 100%;
+    }
+    }

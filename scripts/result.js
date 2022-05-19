@@ -45,7 +45,7 @@ chrome.storage.local.get(["original"], (result) => {
     const abridgeElement = document.getElementById("abridge-text");
     abridgeElement.classList.add("loading");
 
-    fetch("https://localhost:5000/predict", {
+    fetch("http://localhost:5000/predict", {
         method: "POST",
         body: JSON.stringify({ txt: textChunks }),
     }).then((data) => {
